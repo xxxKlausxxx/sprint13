@@ -34,4 +34,4 @@ const createUser = (req, res) => {
     .catch(() => res.status(400).send({ message: 'Ошибка валидации полей пользователя' }));
 };
 
-module.exports = { readUsers, readUserById, createUser };
+module.exports = { readUsers, createUser, readUserById };

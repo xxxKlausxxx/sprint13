@@ -19,7 +19,6 @@ const createCard = (req, res) => {
   Card.create({ name, link, owner: req.user._id })
     .then((card) => res.status(201).send({ data: card }))
     .catch(() => res.status(400).send({ message: 'Ошибка валидации полей карточки' }));
-  console.log(req.user._id);
 };
 
 const deleteCard = (req, res) => {

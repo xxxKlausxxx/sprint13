@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const validator = require('validator');
 
 const userSchema = new mongoose.Schema({
@@ -23,6 +22,7 @@ const userSchema = new mongoose.Schema({
       message: 'Must be a Valid URL',
     },
   },
+
 });
 
 module.exports = mongoose.model('user', userSchema);
