@@ -1,14 +1,8 @@
 const router = require('express').Router();
-const readFile = require('./helpers');
+const { readCards, createCard, deleteCard } = require('../controllers/cards');
 
-const readCards = async (req, res) => {
-  try {
-    const cards = await readFile('../data/cards.json');
-    res.send(cards);
-  } catch (err) {
-    res.status(500).send({ message: 'Ошибка чтения файла карточек' });
-  }
-};
-
+router.post('/cards', createCard);
 router.get('/cards', readCards);
+router.delete('/cards/:id', deleteCard);
+
 module.exports = router;
